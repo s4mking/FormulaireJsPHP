@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+   
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <audio id='audio' controls>
+    <source src="videos/nyancat.mp3" type="audio/mpeg">
+      Test
+  </audio>
+  <h2 id='lastform'>Vous avez rempli le formulaire!!!!!!!!!!!!!!!!</h2>
+  <div id='nyan' class="NyanCat NyanSize"></div>
+  <div id='nyan2' class="NyanCat NyanSize"></div>
+  <div id='nyan3' class="NyanCat NyanSize"></div>
+  <div id='nyan4' class="NyanCat NyanSize"></div>
+  <div class='column'>
+         
+      <div id='flex1'>
+          
+          <video id='hassan'>
+            <source src='https://theannoyingsite.com/hasan.mp4' type='video/mp4'>
+          </video>
+          <video id='yeah'>
+            <source src='https://theannoyingsite.com/badger.mp4' type='video/mp4'>
+          </video>
+          <video id='rick'>
+            <source src='https://theannoyingsite.com/space.mp4' type='video/mp4'>
+          </video>
+        </div>
+       <div id='flex2'>
+          <video id='albundy'>
+              <source src='videos/al.mp4' type='video/mp4'>
+            </video>
+        <video id='heman'>
+          <source src='https://theannoyingsite.com/heman.mp4' type='video/mp4'>
+        </video>
+        <video id='trolol'>
+          <source src='https://theannoyingsite.com/trolol.mp4' type='video/mp4'>
+        </video>
+        <video id='space'>
+          <source src='https://theannoyingsite.com/jozin.mp4' type='video/mp4'>
+        </video>
+       </div>
+  </div>
+ 
+  
+
+ 
+<form method="POST" id='form' name='myform' action="checkThatForm.php" onsubmit="event.preventDefault(); return myValidation();">
+   
+    <h1>Formulaire génial</h1>
+  <fieldset id='first'>
+    
+    <legend>Qui es tu?</legend>
+    <div>
+        <label>Durée de l'animation en secondes</label>
+        <input id='range' type="range" value="15" max="50" min="0" step="5">
+    </div>
+      <div>
+        <label>Prénom :</label>
+        <input id='prenom' type="text" name="prenom">
+        <span id='prenomFaux'></span>
+      </div> 
+      <div>
+        <label>Nom :</label>
+        <input id='nom' type="text" name="nom">
+        <span id='nomFaux'></span>
+      </div>
+      <div>
+        <label>Date de naissance :</label>
+        <input id='date' type="date" name="age">
+        <span id='dateFaux'></span>
+      </div>
+      <div class="sexe">
+        <label>Sexe :</label>
+          <input type="radio" name="sexe" id='homme' value="femme">Femme
+          <input type="radio" name="sexe" id='femme' value="homme">Homme<br>
+          <span id='sexeFaux'></span>
+        </div>
+        <div id='premierclick' class='boutonNav'>
+          <button id='premierepage' type='button'>Suivant ></button>
+        </div>
+  </fieldset>
+  <fieldset id='second'>
+      <legend>Que veux tu?</legend>
+      <div>
+          <label>Durée de l'animation en secondes</label>
+          <input id='range2' type="range" value="15" max="50" min="0" step="5">
+      </div>
+      <div>
+          <label>Email : :</label>
+          <input id='email' type="text" name="email">
+          <span id='emailFaux'></span>
+          <span id='reponseAjax' style='display:none;'></span>
+        </div>
+        
+        <div>
+          <label>Mot de passe :</label>
+          <input id='password' type="password" name="motdepasse" >
+          <span id='passwordFaux'></span>
+        </div>
+        <div>
+          <label>Retapez le mot de passe :</label>
+          <input id='password2' type="password" name="motdepasse2">
+          <span id='password2Faux'></span>
+        </div>
+        
+          <div>
+            <label>Adresse de blog :</label>
+            <input id='adresseblog' type='text' name='adresseblog'>
+            <span id='adresseblogFaux'></span>
+          </div>
+            <button id='seconde_page' type='button'>Précédent</button>
+            <button id='troisieme_page' type='button'>Suivant ></button>
+           
+  </fieldset>
+  <fieldset id='third'>
+      <div>
+          <label>Durée de l'animation en secondes</label>
+          <input id='range3' type="range" value="15" max="50" min="0" step="5">
+      </div>
+      <legend>Ou vas tu?</legend>
+        <div>
+          <label>Bachelor :</label>
+          <input id='bachelor' type="text" name="bachelor" >
+          <span id='bachelorFaux'></span>
+        </div>
+        <div>
+            <label>Promo :</label>
+            <input id='promo' type="text" name="promo" >
+            <span id='promoFaux'></span>
+          </div>
+          <div class="checkbox">
+              <label>Quel est votre tome du voyageur Galactique préféré? :</label><br>
+                <div id='column'>
+                  <input class='check' id='check1' type="checkbox" name="tome[]" value="Le guide du voyageur Galactique" />Le guide du voyageur Galactique<br />
+                  <input class='check' id='check2' type="checkbox" name="tome[]" value="Le dernier restaurant avant la fin du monde" />Le dernier restaurant avant la fin du monde<br />
+                 <input class='check' id='check3' type="checkbox" name="tome[]" value="La Vie, l'univers et le reste" />La Vie, l'univers et le reste<br />
+                 <input class='check' id='check4' type="checkbox" name="tome[]" value="Salut, et encore merci pour le poisson" />Salut, et encore merci pour le poisson<br />
+                 <input class='check' id='check5' type="checkbox" name="tome[]" value="Globalement inoffensive" />Globalement inoffensive<br>
+                 <span id='tomeFaux' style="margin-left:20%;"></span>
+                </div>
+               
+               </div>
+             
+              <div>
+              <label>Un petit commentaire ?</label><br>
+                 <textarea id='textarea' name="textarea" readonly><b>si ce texte s'affiche en gras, u lost the game</b></textarea>
+                 <span id='textareaFaux'></span>
+               </div>
+                <button id='retour_deuxieme_page' type='button'>Précédent</button>
+          <button id='inscription' type='submit'>Inscription</button>
+  </fieldset>
+</form>
+<div class="controls"></div>
+<main></main>
+</body>
+</html>
+<script src='checkThatForm.js'></script>
+
